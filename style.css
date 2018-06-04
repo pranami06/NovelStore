@@ -1,0 +1,146 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    text-align: center;
+    background: linear-gradient(to right ,brown, burlywood, brown);
+}
+.container{
+    /*width: 1024px;*/
+    width: 400px;
+    display: grid;
+    margin: 0 auto;
+    grid-gap: 10px;
+    grid-template-columns: 1fr;
+    grid-auto-rows: minmax(100px,auto);
+
+}
+ul{
+    text-align: left;
+}
+a{
+    color: rosybrown;
+    text-decoration: none;
+}
+a:hover{
+    font-weight: bolder;
+    color: saddlebrown;
+}
+li{
+    display: inline;
+    padding: 20px;
+}
+.side-bar li{
+    list-style-type: none;
+    text-align: left;
+    display: inline;
+    padding: 10px;
+
+}
+main, .nav-bar, .side-bar{
+    padding: 10px;
+    border-radius: 8px;
+    background: linear-gradient(45deg, black, brown, black);
+    color: burlywood;
+    opacity: 0.8;
+}
+.shopping-card {
+    position: relative;
+    transition: transform 15s;
+    -webkit-transition: transform 15s;
+}
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background:linear-gradient(45deg, black, brown, black);
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+    -webkit-transition: .5s ease;
+    opacity: .7;
+}
+
+.shopping-card:hover .overlay {
+    height: 100%;
+    transform: rotateY(360deg);
+
+}
+
+.content {
+    white-space: nowrap;
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+header,footer{
+    padding: 5px;
+    clear: both;
+}
+header{
+    text-shadow: 4px 5px 10px darkred;
+    font-size: larger;
+    position: relative;
+    animation: animateTextShadow 12s linear infinite;
+}
+img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+
+}
+main{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 15px;
+}
+h1{
+    font-family: 'Rammetto One', cursive;
+}
+h4{
+    margin: -40px 0 0 30%;
+}
+@keyframes animateTextShadow {
+    0%   {left:-10%;}
+
+    50%  {left:10%;}
+
+    100%  {left:-10%; right:100%;}
+
+}
+
+@media(min-width: 700px) {
+    .container{
+        width: 1100px;
+        display: grid;
+        margin: 0 auto;
+        grid-gap: 10px;
+        grid-template-columns: 2fr 7fr 2fr;
+        grid-auto-rows: minmax(100px,auto);
+
+    }
+    header, footer{
+        grid-column: 1 / span 3;
+    }
+    main{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    main h2{
+        grid-column: 1 / span 3;
+    }
+    .side-bar li{
+        padding: 0 10px 0 0;
+    }
+    li{
+        display: block;
+        padding: 8px;
+    }
+}
